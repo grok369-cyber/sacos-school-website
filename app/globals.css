@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #172033;
+  --muted: #667085;
+  --cream: #f7f4ed;
+  --paper: #fffdf8;
+  --navy: #132238;
+  --gold: #b89042;
+  --gold-soft: #ead9b3;
+  --line: #e6e0d4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+::selection { background: var(--gold-soft); color: var(--ink); }
+.display { font-family: Georgia, "Times New Roman", serif; }
+.container-school { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+.hero-grid {
+  background-image: linear-gradient(rgba(184,144,66,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(184,144,66,.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.paper-card { background: var(--paper); border: 1px solid var(--line); }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+.float-slow { animation: float 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float-slow { animation: none; }
+}
