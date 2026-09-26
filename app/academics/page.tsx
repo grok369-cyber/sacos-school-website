@@ -1,0 +1,9 @@
+import Link from "next/link";
+
+const levels = [
+  ["Lower Secondary", "Senior 1–2", "A strong foundation in core subjects, study habits, curiosity and character."],
+  ["Middle Secondary", "Senior 3–4", "Deeper subject knowledge, practical learning and preparation for UCE."],
+  ["Upper Secondary", "Senior 5–6", "Focused subject combinations, leadership and preparation for the next stage."]
+];
+
+export default function AcademicsPage() { return <main><section className="hero-grid border-b border-[var(--line)]"><div className="container-school py-20"><span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--gold)]">Academics</span><h1 className="display mt-4 text-5xl text-[var(--navy)] sm:text-7xl">Learning with purpose.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">Academic information will be managed in Sanity so the school can keep subjects, departments, programmes and announcements current.</p></div></section><section className="container-school py-20"><div className="grid gap-6 md:grid-cols-3">{levels.map(([title,years,text])=><article key={title} className="paper-card rounded-2xl p-7"><span className="text-xs font-bold uppercase tracking-[.16em] text-[var(--gold)]">{years}</span><h2 className="display mt-4 text-2xl text-[var(--navy)]">{title}</h2><p className="mt-3 leading-7 text-[var(--muted)]">{text}</p></article>)}</div><div className="mt-14 rounded-3xl bg-[var(--navy)] p-8 text-white md:p-12"><h2 className="display text-3xl">Academic information belongs in the CMS.</h2><p className="mt-4 max-w-2xl leading-7 text-white/70">Once the official subject lists and departments are confirmed, we can add them to Sanity and render them here automatically.</p><Link href="/contact" className="mt-7 inline-block text-sm font-semibold text-[var(--gold-soft)]">Ask about admissions →</Link></div></section></main>; }
