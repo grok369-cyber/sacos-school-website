@@ -1,0 +1,10 @@
+import { Quote } from "lucide-react";
+
+export default function AboutPage() {
+  return <main>
+    <section className="hero-grid border-b border-[var(--line)]"><div className="container-school py-20 sm:py-28"><span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--gold)]">About Savio</span><h1 className="display mt-4 max-w-4xl text-5xl leading-tight text-[var(--navy)] sm:text-7xl">A school built around character, learning and possibility.</h1><p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted)]">Savio Secondary School is presented here as a welcoming school community in Kawempe, Kampala. The detailed school profile can be maintained from the Sanity CMS as official information is confirmed.</p></div></section>
+    <section className="container-school grid gap-6 py-20 md:grid-cols-3"><Info title="Our mission">To provide a disciplined, supportive environment where learners develop academically, socially and personally.</Info><Info title="Our vision">To nurture confident young people who use knowledge responsibly and contribute positively to their communities.</Info><Info title="Our values">Integrity, discipline, curiosity, respect, service and a commitment to continuous learning.</Info></section>
+    <section className="bg-[var(--cream)] py-20"><div className="container-school grid gap-12 lg:grid-cols-2 lg:items-center"><div><Quote className="text-[var(--gold)]" size={38}/><h2 className="display mt-5 text-4xl text-[var(--navy)]">Fides · Scientia · Futura</h2></div><p className="text-lg leading-8 text-[var(--muted)]">The new site intentionally separates the school’s editable information from its design. That means leadership can update the official history, mission, contact details and announcements without asking a developer to edit page code.</p></div></section>
+  </main>;
+}
+function Info({title,children}:{title:string;children:string}){return <article className="paper-card rounded-2xl p-7"><h2 className="display text-2xl text-[var(--navy)]">{title}</h2><p className="mt-3 leading-7 text-[var(--muted)]">{children}</p></article>}
