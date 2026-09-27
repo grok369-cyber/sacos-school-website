@@ -1,10 +1,70 @@
-import { Quote } from "lucide-react";
+import { Award, Building2, Quote, ShieldCheck } from "lucide-react";
 
 export default function AboutPage() {
-  return <main>
-    <section className="hero-grid border-b border-[var(--line)]"><div className="container-school py-20 sm:py-28"><span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--gold)]">About Savio</span><h1 className="display mt-4 max-w-4xl text-5xl leading-tight text-[var(--navy)] sm:text-7xl">A school built around character, learning and possibility.</h1><p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted)]">Savio Secondary School is presented here as a welcoming school community in Kawempe, Kampala. The detailed school profile can be maintained from the Sanity CMS as official information is confirmed.</p></div></section>
-    <section className="container-school grid gap-6 py-20 md:grid-cols-3"><Info title="Our mission">To provide a disciplined, supportive environment where learners develop academically, socially and personally.</Info><Info title="Our vision">To nurture confident young people who use knowledge responsibly and contribute positively to their communities.</Info><Info title="Our values">Integrity, discipline, curiosity, respect, service and a commitment to continuous learning.</Info></section>
-    <section className="bg-[var(--cream)] py-20"><div className="container-school grid gap-12 lg:grid-cols-2 lg:items-center"><div><Quote className="text-[var(--gold)]" size={38}/><h2 className="display mt-5 text-4xl text-[var(--navy)]">Fides · Scientia · Futura</h2></div><p className="text-lg leading-8 text-[var(--muted)]">The new site intentionally separates the school’s editable information from its design. That means leadership can update the official history, mission, contact details and announcements without asking a developer to edit page code.</p></div></section>
-  </main>;
+  return (
+    <main>
+      <section className="hero-grid border-b border-[var(--line)]">
+        <div className="container-school py-20 sm:py-28">
+          <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">About Savio</span>
+          <h1 className="display mt-4 max-w-4xl text-5xl leading-tight text-[var(--green-dark)] sm:text-7xl">
+            Savio Secondary School, Kawempe.
+          </h1>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
+            Savio S.S. (SACOS) is a mixed day and boarding secondary school offering both O-Level and A-Level education.
+          </p>
+        </div>
+      </section>
+
+      <section className="container-school grid gap-5 py-16 sm:grid-cols-2 lg:grid-cols-4">
+        <Info title="School type">Mixed Day & Boarding</Info>
+        <Info title="Levels">O-Level & A-Level</Info>
+        <Info title="UNEB Centre">U3762</Info>
+        <Info title="Selection code">3687</Info>
+      </section>
+
+      <section className="bg-[var(--cream)] py-20">
+        <div className="container-school grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+          <div>
+            <Quote className="text-[var(--brown)]" size={38} />
+            <h2 className="display mt-5 text-4xl text-[var(--green-dark)]">Treasure in a jar of clay.</h2>
+            <p className="mt-4 text-sm font-bold uppercase tracking-[.18em] text-[var(--brown)]">Savio school motto</p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-3">
+            <Stat icon={<ShieldCheck />} title="Registered" text="Ministry registration PSS/S/649" />
+            <Stat icon={<Building2 />} title="Location" text="Kawempe Ttula, Kampala / Wakiso" />
+            <Stat icon={<Award />} title="Achievement" text="UCE Division 1 and UACE top performers" />
+          </div>
+        </div>
+      </section>
+
+      <section className="container-school py-20">
+        <div className="max-w-3xl">
+          <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">Campus</span>
+          <h2 className="display mt-3 text-4xl text-[var(--brown-dark)] sm:text-5xl">A growing learning environment.</h2>
+          <p className="mt-5 text-lg leading-8 text-[var(--muted)]">
+            The school profile describes modern multi-storey classroom blocks with spacious balconies and safety railings, a multi-level administrative centre, and computer laboratories supporting practical ICT learning under the updated UNEB lower secondary curriculum.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
 }
-function Info({title,children}:{title:string;children:string}){return <article className="paper-card rounded-2xl p-7"><h2 className="display text-2xl text-[var(--navy)]">{title}</h2><p className="mt-3 leading-7 text-[var(--muted)]">{children}</p></article>}
+
+function Info({ title, children }: { title: string; children: string }) {
+  return (
+    <article className="paper-card rounded-2xl border-t-4 border-t-[var(--green)] p-6">
+      <p className="text-xs font-bold uppercase tracking-[.16em] text-[var(--brown)]">{title}</p>
+      <p className="mt-3 font-semibold text-[var(--green-dark)]">{children}</p>
+    </article>
+  );
+}
+
+function Stat({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-white p-6">
+      <div className="text-[var(--green)]">{icon}</div>
+      <h3 className="display mt-4 text-xl text-[var(--brown-dark)]">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{text}</p>
+    </article>
+  );
+}
