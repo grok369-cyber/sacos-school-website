@@ -12,6 +12,10 @@
   --muted: #6f675f;
   --line: #ded4c8;
   --red: #c5222f;
+  /* Compatibility aliases used by the inner pages */
+  --navy: var(--green-dark);
+  --gold: var(--green);
+  --gold-soft: #cfe2d7;
 }
 
 * { box-sizing: border-box; }
