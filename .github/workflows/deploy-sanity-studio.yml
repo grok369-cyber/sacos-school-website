@@ -27,10 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify Sanity CLI
+        run: npx sanity --version
+
       - name: Verify styled-components
         run: node -e "console.log('styled-components:', require.resolve('styled-components'))"
 
       - name: Deploy Studio to Sanity
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
-        run: npx sanity@latest deploy --url "${{ inputs.hostname }}" --yes
+        run: npx sanity deploy --url "${{ inputs.hostname }}" --yes
