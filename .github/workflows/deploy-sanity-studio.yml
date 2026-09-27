@@ -23,9 +23,13 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 22
+          cache: npm
 
       - name: Install dependencies
         run: npm install
+
+      - name: Verify styled-components
+        run: node -e "console.log('styled-components:', require.resolve('styled-components'))"
 
       - name: Deploy Studio to Sanity
         env:
