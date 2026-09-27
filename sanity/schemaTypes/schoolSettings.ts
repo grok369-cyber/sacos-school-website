@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 
-const heroSlide = {
+export const heroSlide = {
   name: "heroSlide",
   title: "Homepage slide",
   type: "object",
@@ -27,7 +27,7 @@ const heroSlide = {
   ],
 };
 
-const academicLevel = {
+export const academicLevel = {
   name: "academicLevel",
   title: "Academic level",
   type: "object",
@@ -38,7 +38,7 @@ const academicLevel = {
   ],
 };
 
-const uaceResult = {
+export const uaceResult = {
   name: "uaceResult",
   title: "UACE result",
   type: "object",
@@ -49,7 +49,7 @@ const uaceResult = {
   ],
 };
 
-const uceResult = {
+export const uceResult = {
   name: "uceResult",
   title: "UCE result",
   type: "object",
