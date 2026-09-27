@@ -8,6 +8,8 @@ const links = [
   ["About", "/about"],
   ["Academics", "/academics"],
   ["Admissions", "/admissions"],
+  ["Events", "/events"],
+  ["Staff", "/staff"],
   ["News", "/news"],
   ["Gallery", "/gallery"],
   ["Contact", "/contact"]
@@ -27,7 +29,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {links.map(([label, href]) => (
             <Link key={href} href={href} className="text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--green)]">
               {label}
@@ -39,13 +41,13 @@ export function Header() {
           Admissions
         </Link>
 
-        <button className="rounded-full p-2 text-[var(--green)] md:hidden" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
+        <button className="rounded-full p-2 text-[var(--green)] lg:hidden" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-[var(--line)] bg-[var(--paper)] px-4 py-4 md:hidden">
+        <nav className="border-t border-[var(--line)] bg-[var(--paper)] px-4 py-4 lg:hidden">
           {links.map(([label, href]) => (
             <Link key={href} href={href} onClick={() => setOpen(false)} className="block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]">
               {label}
