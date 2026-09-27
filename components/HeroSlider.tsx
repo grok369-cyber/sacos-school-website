@@ -37,7 +37,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
   const slide = safeSlides[active];
 
   return (
-    <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-[var(--green-dark)]">
+    <section className="relative min-h-[600px] overflow-hidden bg-[var(--green-dark)] sm:min-h-[calc(100svh-5rem)]">
       {slide.image ? (
         <Image
           key={slide.image}
@@ -55,30 +55,30 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,59,40,.82)_0%,rgba(6,59,40,.56)_45%,rgba(6,59,40,.2)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15" />
 
-      <div className="container-school relative z-10 flex min-h-[calc(100svh-5rem)] items-end pb-24 pt-24 sm:items-center sm:pb-20">
-        <div className="max-w-4xl text-white">
-          <span className="inline-flex rounded-full border border-white/35 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] backdrop-blur-sm">
+      <div className="container-school relative z-10 flex min-h-[600px] items-end pb-20 pt-20 sm:min-h-[calc(100svh-5rem)] sm:items-center sm:pb-20 sm:pt-24">
+        <div className="max-w-4xl min-w-0 text-white">
+          <span className="inline-flex max-w-full rounded-full border border-white/35 bg-white/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[.14em] backdrop-blur-sm sm:px-4 sm:text-xs sm:tracking-[.18em]">
             Savio Secondary School · Kawempe
           </span>
 
-          <h1 className="display mt-6 max-w-4xl text-5xl leading-[.95] sm:text-6xl lg:text-8xl">
+          <h1 className="display mt-5 max-w-4xl break-words text-4xl leading-[.98] sm:mt-6 sm:text-6xl sm:leading-[.95] lg:text-8xl">
             {slide.title}
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+          <p className="mt-5 max-w-2xl text-[15px] leading-6 text-white/90 sm:mt-6 sm:text-lg sm:leading-8">
             {slide.subtitle}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-7 flex max-w-full flex-wrap gap-3 sm:mt-8">
             <Link
               href="/admissions"
-              className="rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[var(--green-dark)] transition hover:-translate-y-0.5"
+              className="rounded-full bg-white px-5 py-3 text-sm font-bold text-[var(--green-dark)] transition hover:-translate-y-0.5 sm:px-6 sm:py-3.5"
             >
               Explore admissions
             </Link>
             <Link
               href="/about"
-              className="rounded-full border border-white/60 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20"
+              className="rounded-full border border-white/60 bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20 sm:px-6 sm:py-3.5"
             >
               Discover Savio
             </Link>
@@ -108,7 +108,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
             <ChevronRight size={28} />
           </button>
 
-          <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+          <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-8">
             {safeSlides.map((item, index) => (
               <button
                 key={item.image + "-" + index}
