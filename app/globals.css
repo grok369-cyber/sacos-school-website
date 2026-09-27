@@ -45,3 +45,6 @@ body { margin: 0; background: var(--paper); color: var(--brown-dark); }
   html { scroll-behavior: auto; }
   .float-slow { animation: none; }
 }
+
+
+.hero-fallback { background: radial-gradient(circle at 75% 25%, rgba(231,240,235,.25), transparent 30%), radial-gradient(circle at 20% 80%, rgba(90,57,41,.35), transparent 35%), linear-gradient(135deg, var(--green-dark), var(--green)); }
