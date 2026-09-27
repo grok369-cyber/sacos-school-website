@@ -33,28 +33,42 @@ export default async function HomePage() {
       ])
     : [null, []];
 
-  const slides = [
-    settings?.heroImage
-      ? {
-          image: urlFor(settings.heroImage).width(1800).height(1100).fit("crop").url(),
-          title: settings?.motto || "Treasure in a jar of clay.",
-          subtitle:
-            settings?.about ||
-            "A school community dedicated to learning, character, responsibility and purpose.",
-        }
-      : null,
-    ...gallery.slice(0, 4).map((item) =>
-      item.coverImage
-        ? {
-            image: urlFor(item.coverImage).width(1800).height(1100).fit("crop").url(),
-            title: item.title,
-            subtitle:
-              item.caption ||
-              "Discover learning, community and life at Savio Secondary School.",
-          }
-        : null,
-    ),
-  ].filter(Boolean) as { image: string; title: string; subtitle: string }[];
+  const sanitySlides = (settings?.heroSlides || [])
+    .filter((slide: any) => slide?.image)
+    .map((slide: any) => ({
+      image: urlFor(slide.image).width(1800).height(1100).fit("crop").url(),
+      title: slide.title || settings?.motto || "Treasure in a jar of clay.",
+      subtitle:
+        slide.subtitle ||
+        settings?.about ||
+        "A school community dedicated to learning, character, responsibility and purpose.",
+    }));
+
+  const slides =
+    sanitySlides.length > 0
+      ? sanitySlides
+      : [
+          settings?.heroImage
+            ? {
+                image: urlFor(settings.heroImage).width(1800).height(1100).fit("crop").url(),
+                title: settings?.motto || "Treasure in a jar of clay.",
+                subtitle:
+                  settings?.about ||
+                  "A school community dedicated to learning, character, responsibility and purpose.",
+              }
+            : null,
+          ...gallery.slice(0, 4).map((item) =>
+            item.coverImage
+              ? {
+                  image: urlFor(item.coverImage).width(1800).height(1100).fit("crop").url(),
+                  title: item.title,
+                  subtitle:
+                    item.caption ||
+                    "Discover learning, community and life at Savio Secondary School.",
+                }
+              : null,
+          ),
+        ].filter(Boolean) as { image: string; title: string; subtitle: string }[];
 
   return (
     <main>
@@ -87,16 +101,10 @@ export default async function HomePage() {
               meet the team, follow events and discover the latest news.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/about"
-                className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-bold text-white"
-              >
+              <Link href="/about" className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-bold text-white">
                 About Savio
               </Link>
-              <Link
-                href="/contact"
-                className="rounded-full border border-[var(--brown-soft)] bg-white px-5 py-3 text-sm font-bold text-[var(--brown-dark)]"
-              >
+              <Link href="/contact" className="rounded-full border border-[var(--brown-soft)] bg-white px-5 py-3 text-sm font-bold text-[var(--brown-dark)]">
                 Contact the school
               </Link>
             </div>
@@ -107,54 +115,36 @@ export default async function HomePage() {
       <section className="container-school py-20">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">
-              Latest
-            </span>
+            <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">Latest</span>
             <h2 className="display mt-2 text-4xl text-[var(--brown-dark)]">News & updates</h2>
           </div>
-          <Link href="/news" className="text-sm font-bold text-[var(--green)]">
-            View all →
-          </Link>
+          <Link href="/news" className="text-sm font-bold text-[var(--green)]">View all →</Link>
         </div>
-        <div className="mt-8">
-          <NewsGrid limit={3} />
-        </div>
+        <div className="mt-8"><NewsGrid limit={3} /></div>
       </section>
 
       <section className="bg-[var(--green-dark)] py-20">
         <div className="container-school">
           <div className="flex flex-col justify-between gap-4 text-white sm:flex-row sm:items-end">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[.2em] text-white/70">
-                What's happening
-              </span>
+              <span className="text-xs font-bold uppercase tracking-[.2em] text-white/70">What's happening</span>
               <h2 className="display mt-2 text-4xl">Upcoming events</h2>
             </div>
-            <Link href="/events" className="text-sm font-bold text-white">
-              View all →
-            </Link>
+            <Link href="/events" className="text-sm font-bold text-white">View all →</Link>
           </div>
-          <div className="mt-8">
-            <EventsGrid limit={3} />
-          </div>
+          <div className="mt-8"><EventsGrid limit={3} /></div>
         </div>
       </section>
 
       <section className="container-school py-20">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">
-              Campus life
-            </span>
+            <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">Campus life</span>
             <h2 className="display mt-2 text-4xl text-[var(--brown-dark)]">From the gallery</h2>
           </div>
-          <Link href="/gallery" className="text-sm font-bold text-[var(--green)]">
-            See gallery →
-          </Link>
+          <Link href="/gallery" className="text-sm font-bold text-[var(--green)]">See gallery →</Link>
         </div>
-        <div className="mt-8">
-          <GalleryPreview />
-        </div>
+        <div className="mt-8"><GalleryPreview /></div>
       </section>
     </main>
   );
