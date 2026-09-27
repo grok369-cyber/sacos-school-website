@@ -13,7 +13,15 @@ export function Footer() {
         <div>
           <p className="text-xs font-bold uppercase tracking-[.2em] text-[#d7eadf]">Explore</p>
           <div className="mt-4 grid gap-2 text-sm text-white/70">
-            {[["About", "/about"], ["Academics", "/academics"], ["Admissions", "/admissions"], ["News", "/news"]].map(([l, h]) => (
+            {[
+              ["About", "/about"],
+              ["Academics", "/academics"],
+              ["Admissions", "/admissions"],
+              ["Events", "/events"],
+              ["Staff", "/staff"],
+              ["News", "/news"],
+              ["Gallery", "/gallery"]
+            ].map(([l, h]) => (
               <Link key={h} href={h} className="transition hover:text-white">{l}</Link>
             ))}
           </div>
