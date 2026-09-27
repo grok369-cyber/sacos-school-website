@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 620" role="img" aria-labelledby="title desc">
+  <title id="title">Savio Secondary School badge</title>
+  <desc id="desc">Savio Secondary School SACOS crest with mountain, pen and graduation cap.</desc>
+  <rect x="18" y="18" width="464" height="584" rx="24" fill="#fffdf9" stroke="#1e5631" stroke-width="10"/>
+  <rect x="38" y="38" width="424" height="544" rx="16" fill="none" stroke="#5a3929" stroke-width="5"/>
+  <path d="M72 92 Q250 54 428 92" fill="none" stroke="#1e5631" stroke-width="7"/>
+  <text x="250" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="#1e5631">SAVIO</text>
+  <text x="250" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="800" fill="#5a3929">SECONDARY SCHOOL</text>
+  <path d="M90 300 L185 205 L230 245 L300 168 L410 300 Z" fill="#e8efe9" stroke="#1e5631" stroke-width="7"/>
+  <path d="M92 300 L178 235 L220 270 L300 205 L408 300" fill="none" stroke="#5a3929" stroke-width="6"/>
+  <path d="M125 290 L178 210 L190 220 L150 300 Z" fill="#382116" stroke="#1e5631" stroke-width="5"/>
+  <path d="M130 286 L170 224" stroke="#fffdf9" stroke-width="5"/>
+  <path d="M305 176 L370 140 L435 176 L370 212 Z" fill="#c5222f" stroke="#382116" stroke-width="6"/>
+  <path d="M370 212 V246" stroke="#382116" stroke-width="7"/>
+  <circle cx="370" cy="251" r="7" fill="#c5222f"/>
+  <rect x="72" y="322" width="356" height="86" fill="#fffdf9" stroke="#5a3929" stroke-width="6"/>
+  <text x="250" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="900" fill="#1e5631">SACOS</text>
+  <path d="M68 445 Q250 515 432 445 L414 518 Q250 560 86 518 Z" fill="#1e5631"/>
+  <text x="250" y="502" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#fffdf9">TREASURE IN A JAR OF CLAY</text>
+</svg>
