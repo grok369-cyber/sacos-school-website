@@ -20,7 +20,12 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--brown-dark); }
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--brown-dark);
+}
 ::selection { background: #cfe2d7; color: var(--green-dark); }
 .display { font-family: Georgia, "Times New Roman", serif; }
 .container-school { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
@@ -46,5 +51,9 @@ body { margin: 0; background: var(--paper); color: var(--brown-dark); }
   .float-slow { animation: none; }
 }
 
-
-.hero-fallback { background: radial-gradient(circle at 75% 25%, rgba(231,240,235,.25), transparent 30%), radial-gradient(circle at 20% 80%, rgba(90,57,41,.35), transparent 35%), linear-gradient(135deg, var(--green-dark), var(--green)); }
+.hero-fallback {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(231,240,235,.25), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(90,57,41,.35), transparent 35%),
+    linear-gradient(135deg, var(--green-dark), var(--green));
+}
