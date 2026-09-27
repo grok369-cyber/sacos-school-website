@@ -36,4 +36,4 @@ jobs:
       - name: Deploy Studio to Sanity
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
-        run: npx sanity deploy --url "${{ inputs.hostname }}" --yes
+        run: npx sanity deploy --url "${{ inputs.hostname }}" --yes --schema-required
