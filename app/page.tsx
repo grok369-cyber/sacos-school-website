@@ -46,16 +46,8 @@ export default function HomePage() {
             <div className="float-slow absolute h-72 w-72 rounded-full border-2 border-[#bdd3c5] sm:h-96 sm:w-96" />
             <div className="absolute h-60 w-60 rounded-full border border-[var(--brown-soft)] bg-white/60 sm:h-80 sm:w-80" />
 
-            <div className="relative flex h-56 w-56 items-center justify-center rounded-[2rem] border-2 border-[var(--green)] bg-white text-center shadow-2xl sm:h-64 sm:w-64">
-              <div className="relative h-44 w-44 rounded-2xl border-2 border-[var(--brown)] p-5 sm:h-48 sm:w-48">
-                <div className="text-[11px] font-black uppercase tracking-wide text-[var(--green)]">Savio Secondary</div>
-                <div className="mx-auto my-5 flex h-16 w-20 items-center justify-center rounded-[50%] border-2 border-[var(--brown)] text-3xl font-black text-[var(--brown)]">
-                  S
-                </div>
-                <div className="text-sm font-black tracking-[.18em] text-[var(--green)]">SACOS</div>
-                <div className="mt-2 text-[8px] font-bold uppercase text-[var(--brown)]">Treasure in a jar of clay</div>
-                <span className="absolute -right-2 top-8 rotate-12 rounded-sm bg-[var(--red)] px-1.5 py-1 text-[7px] font-black text-white">S</span>
-              </div>
+            <div className="relative flex h-64 w-56 items-center justify-center rounded-[2rem] border-2 border-[var(--green)] bg-white p-5 text-center shadow-2xl sm:h-72 sm:w-64">
+              <img src="/savio-badge.svg" alt="Savio Secondary School badge" className="h-full w-full object-contain" />
             </div>
           </div>
         </div>
