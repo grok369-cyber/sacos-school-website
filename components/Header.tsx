@@ -13,19 +13,6 @@ const links = [
   ["Contact", "/contact"]
 ] as const;
 
-function SchoolMark() {
-  return (
-    <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 border-[var(--green)] bg-white shadow-sm">
-      <span className="absolute inset-1 rounded-lg border border-[var(--brown)]" />
-      <span className="relative text-center">
-        <span className="block text-[7px] font-black leading-none tracking-tight text-[var(--green)]">SAVIO</span>
-        <span className="block text-[6px] font-bold leading-none text-[var(--brown)]">SECONDARY</span>
-        <span className="mt-0.5 block text-[8px] font-black leading-none text-[var(--green)]">SACOS</span>
-      </span>
-    </span>
-  );
-}
-
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -33,7 +20,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[rgba(255,253,249,.94)] backdrop-blur-md">
       <div className="container-school flex min-h-20 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <SchoolMark />
+          <img src="/savio-badge.svg" alt="Savio Secondary School badge" className="h-14 w-12 object-contain" />
           <span>
             <strong className="display block text-lg leading-none text-[var(--green-dark)]">Savio Secondary School</strong>
             <span className="mt-1 block text-[9px] font-bold uppercase tracking-[.18em] text-[var(--brown)]">Kawempe · Kampala</span>
