@@ -1,29 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #172033;
-  --muted: #667085;
-  --cream: #f7f4ed;
-  --paper: #fffdf8;
-  --navy: #132238;
-  --gold: #b89042;
-  --gold-soft: #ead9b3;
-  --line: #e6e0d4;
+  --green: #0b5b3b;
+  --green-dark: #063b28;
+  --green-soft: #e7f0eb;
+  --brown: #5a3929;
+  --brown-dark: #382116;
+  --brown-soft: #efe5dc;
+  --cream: #f7f2e9;
+  --paper: #fffdf9;
+  --muted: #6f675f;
+  --line: #ded4c8;
+  --red: #c5222f;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); }
-::selection { background: var(--gold-soft); color: var(--ink); }
+body { margin: 0; background: var(--paper); color: var(--brown-dark); }
+::selection { background: #cfe2d7; color: var(--green-dark); }
 .display { font-family: Georgia, "Times New Roman", serif; }
 .container-school { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+
 .hero-grid {
-  background-image: linear-gradient(rgba(184,144,66,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(184,144,66,.08) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(11,91,59,.13), transparent 28%),
+    radial-gradient(circle at 10% 85%, rgba(90,57,41,.10), transparent 30%),
+    linear-gradient(rgba(11,91,59,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,91,59,.045) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
 }
+
 .paper-card { background: var(--paper); border: 1px solid var(--line); }
+.school-green { color: var(--green); }
+.school-brown { color: var(--brown); }
+
 @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
 .float-slow { animation: float 6s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .float-slow { animation: none; }
