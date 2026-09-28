@@ -65,7 +65,6 @@ const schoolStructuredData = {
     addressLocality: "Kawempe",
     addressRegion: "Kampala",
     addressCountry: "UG",
-    postalCode: "1608",
   },
   email: "saviocollege1@gmail.com",
   telephone: "+256 751 981 614",
