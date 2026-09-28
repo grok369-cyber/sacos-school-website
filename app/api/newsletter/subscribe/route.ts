@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { client, sanityWriteToken } from "@/lib/sanity";
+import { client, sanityWriteToken, writeClient } from "@/lib/sanity";
 
 function normalizeEmail(value: unknown) {
   return typeof value === "string" ? value.trim().toLowerCase() : "";
@@ -32,12 +32,12 @@ export async function POST(request: Request) {
     }
 
     if (existing?._id) {
-      await client.patch(existing._id).set({
+      await writeClient.patch(existing._id).set({
         status: "active",
         subscribedAt: new Date().toISOString(),
       }).commit();
     } else {
-      await client.create({
+      await writeClient.create({
         _type: "newsletterSubscriber",
         email,
         status: "active",
