@@ -37,7 +37,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
   const slide = safeSlides[active];
 
   return (
-    <section className="relative min-h-[600px] overflow-hidden bg-[var(--green-dark)] sm:min-h-[calc(100svh-5rem)]">
+    <section className="relative min-h-[600px] overflow-hidden bg-[var(--brown-dark)] sm:min-h-[calc(100svh-5rem)]">
       {slide.image ? (
         <Image
           key={slide.image}
@@ -72,7 +72,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
           <div className="mt-7 flex max-w-full flex-wrap gap-3 sm:mt-8">
             <Link
               href="/admissions"
-              className="rounded-full bg-white px-5 py-3 text-sm font-bold text-[var(--green-dark)] transition hover:-translate-y-0.5 sm:px-6 sm:py-3.5"
+              className="rounded-full bg-white px-5 py-3 text-sm font-bold text-[var(--brown-dark)] transition hover:-translate-y-0.5 sm:px-6 sm:py-3.5"
             >
               Explore admissions
             </Link>
