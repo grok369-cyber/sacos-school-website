@@ -15,7 +15,7 @@ export default function ContactPage() {
       <section className="hero-grid border-b border-[var(--line)]">
         <div className="container-school py-20">
           <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">Contact Savio</span>
-          <h1 className="display mt-4 text-5xl text-[var(--green-dark)] sm:text-7xl">Talk to the school.</h1>
+          <h1 className="display mt-4 text-5xl text-[var(--brown-dark)] sm:text-7xl">Talk to the school.</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--muted)]">
             Official contact details supplied in the Savio Secondary School profile.
           </p>
@@ -46,7 +46,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="rounded-3xl bg-[var(--green-dark)] p-8 text-white md:p-10">
+        <div className="rounded-3xl bg-[var(--brown-dark)] p-8 text-white md:p-10">
           <p className="text-xs font-bold uppercase tracking-[.2em] text-[#cfe2d7]">School identifiers</p>
           <h2 className="display mt-4 text-3xl">Savio S.S. / SACOS</h2>
           <div className="mt-8 space-y-4 text-sm">
