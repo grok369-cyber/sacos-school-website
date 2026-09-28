@@ -76,7 +76,7 @@ export default async function HomePage() {
 
       <section className="container-school relative z-20 -mt-10 grid gap-5 pb-16 md:grid-cols-3">
         {pillars.map(({ icon: Icon, title, text }) => (
-          <article key={title} className="paper-card rounded-2xl border-t-4 border-t-[var(--green)] p-7 shadow-lg">
+          <article key={title} className="paper-card rounded-2xl border-t-4 border-t-[var(--brown)] p-7 shadow-lg">
             <Icon className="text-[var(--green)]" size={25} strokeWidth={1.8} />
             <h2 className="display mt-5 text-2xl text-[var(--brown-dark)]">{title}</h2>
             <p className="mt-3 leading-7 text-[var(--muted)]">{text}</p>
@@ -101,7 +101,7 @@ export default async function HomePage() {
               meet the team, follow events and discover the latest news.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/about" className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-bold text-white">
+              <Link href="/about" className="rounded-full bg-[var(--brown)] px-5 py-3 text-sm font-bold text-white">
                 About Savio
               </Link>
               <Link href="/contact" className="rounded-full border border-[var(--brown-soft)] bg-white px-5 py-3 text-sm font-bold text-[var(--brown-dark)]">
@@ -123,7 +123,7 @@ export default async function HomePage() {
         <div className="mt-8"><NewsGrid limit={3} /></div>
       </section>
 
-      <section className="bg-[var(--green-dark)] py-20">
+      <section className="bg-[var(--brown-dark)] py-20">
         <div className="container-school">
           <div className="flex flex-col justify-between gap-4 text-white sm:flex-row sm:items-end">
             <div>
