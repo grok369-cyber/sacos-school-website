@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { InquiryForm } from "@/components/InquiryForm";
 
 const phones = [
   "+256 751 981 614",
@@ -62,6 +63,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <InquiryForm />
     </main>
   );
 }
