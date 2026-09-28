@@ -11,16 +11,29 @@ export const sanityProjectId =
 export const sanityDataset =
   process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 
+export const sanityWriteToken = process.env.SANITY_API_WRITE_TOKEN;
+
 export const client = createClient({
   projectId: sanityProjectId,
   dataset: sanityDataset,
   apiVersion: "2026-01-01",
-  useCdn: true
+  useCdn: true,
 });
+
+export const writeClient = sanityWriteToken
+  ? createClient({
+      projectId: sanityProjectId,
+      dataset: sanityDataset,
+      apiVersion: "2026-01-01",
+      useCdn: false,
+      token: sanityWriteToken,
+      perspective: "published",
+    })
+  : client;
 
 const builder = imageUrlBuilder({
   projectId: sanityProjectId,
-  dataset: sanityDataset
+  dataset: sanityDataset,
 });
 
 export const urlFor = (source: any) => builder.image(source);
