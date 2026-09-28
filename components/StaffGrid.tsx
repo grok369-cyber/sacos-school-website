@@ -33,7 +33,7 @@ export async function StaffGrid({ limit = 24 }: { limit?: number }) {
             )}
           </div>
           <div className="p-6">
-            <h2 className="display text-2xl text-[var(--green-dark)]">{member.name}</h2>
+            <h2 className="display text-2xl text-[var(--brown-dark)]">{member.name}</h2>
             <p className="mt-2 text-sm font-bold text-[var(--brown)]">{member.position}</p>
             {member.department && (
               <p className="mt-1 text-xs font-semibold uppercase tracking-[.12em] text-[var(--muted)]">
