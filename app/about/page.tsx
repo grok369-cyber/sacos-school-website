@@ -6,7 +6,7 @@ export default function AboutPage() {
       <section className="hero-grid border-b border-[var(--line)]">
         <div className="container-school py-20 sm:py-28">
           <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">About Savio</span>
-          <h1 className="display mt-4 max-w-4xl text-5xl leading-tight text-[var(--green-dark)] sm:text-7xl">
+          <h1 className="display mt-4 max-w-4xl text-5xl leading-tight text-[var(--brown-dark)] sm:text-7xl">
             Savio Secondary School, Kawempe.
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div className="container-school grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <div>
             <Quote className="text-[var(--brown)]" size={38} />
-            <h2 className="display mt-5 text-4xl text-[var(--green-dark)]">Treasure in a jar of clay.</h2>
+            <h2 className="display mt-5 text-4xl text-[var(--brown-dark)]">Treasure in a jar of clay.</h2>
             <p className="mt-4 text-sm font-bold uppercase tracking-[.18em] text-[var(--brown)]">Savio school motto</p>
           </div>
           <div className="grid gap-5 sm:grid-cols-3">
@@ -52,9 +52,9 @@ export default function AboutPage() {
 
 function Info({ title, children }: { title: string; children: string }) {
   return (
-    <article className="paper-card rounded-2xl border-t-4 border-t-[var(--green)] p-6">
+    <article className="paper-card rounded-2xl border-t-4 border-t-[var(--brown)] p-6">
       <p className="text-xs font-bold uppercase tracking-[.16em] text-[var(--brown)]">{title}</p>
-      <p className="mt-3 font-semibold text-[var(--green-dark)]">{children}</p>
+      <p className="mt-3 font-semibold text-[var(--brown-dark)]">{children}</p>
     </article>
   );
 }
