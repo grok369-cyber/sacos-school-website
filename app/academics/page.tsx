@@ -47,7 +47,7 @@ export default async function AcademicsPage() {
       <section className="hero-grid border-b border-[var(--line)]">
         <div className="container-school py-20">
           <span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--green)]">Academics</span>
-          <h1 className="display mt-4 text-5xl text-[var(--green-dark)] sm:text-7xl">
+          <h1 className="display mt-4 text-5xl text-[var(--brown-dark)] sm:text-7xl">
             {settings?.academicHeroTitle || "O-Level. A-Level. ICT. UNEB."}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--muted)]">
@@ -61,7 +61,7 @@ export default async function AcademicsPage() {
         {levels.map(([title, label, text]: string[], i: number) => {
           const Icon = i === 0 ? School : i === 1 ? Award : Laptop;
           return (
-            <article key={title} className="paper-card rounded-2xl border-t-4 border-t-[var(--green)] p-7">
+            <article key={title} className="paper-card rounded-2xl border-t-4 border-t-[var(--brown)] p-7">
               <Icon className="text-[var(--green)]" size={27} />
               <span className="mt-5 block text-xs font-bold uppercase tracking-[.16em] text-[var(--brown)]">{label}</span>
               <h2 className="display mt-3 text-2xl text-[var(--brown-dark)]">{title}</h2>
@@ -85,7 +85,7 @@ export default async function AcademicsPage() {
             {uace.map(([name, combination, points]: string[]) => (
               <article key={name} className="rounded-2xl bg-white p-6 shadow-sm">
                 <p className="text-xs font-bold uppercase tracking-[.14em] text-[var(--brown)]">UACE</p>
-                <h3 className="mt-3 font-bold text-[var(--green-dark)]">{name}</h3>
+                <h3 className="mt-3 font-bold text-[var(--brown-dark)]">{name}</h3>
                 <p className="mt-2 text-sm text-[var(--muted)]">{combination}</p>
                 <p className="mt-4 text-2xl font-black text-[var(--green)]">{points}</p>
               </article>
@@ -107,10 +107,10 @@ export default async function AcademicsPage() {
       </section>
 
       <section className="container-school py-20">
-        <div className="rounded-3xl bg-[var(--green-dark)] p-8 text-white md:p-12">
+        <div className="rounded-3xl bg-[var(--brown-dark)] p-8 text-white md:p-12">
           <h2 className="display text-3xl">Want to know more about studying at Savio?</h2>
           <p className="mt-4 max-w-2xl leading-7 text-white/75">Contact the school about current subjects, combinations, admissions and academic arrangements.</p>
-          <Link href="/contact" className="mt-7 inline-block rounded-full bg-white px-6 py-3 text-sm font-bold text-[var(--green-dark)]">Contact Savio →</Link>
+          <Link href="/contact" className="mt-7 inline-block rounded-full bg-white px-6 py-3 text-sm font-bold text-[var(--brown-dark)]">Contact Savio →</Link>
         </div>
       </section>
     </main>
