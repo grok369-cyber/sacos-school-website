@@ -2,6 +2,9 @@
 
 import { FormEvent, useState } from "react";
 
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY = "5f944c9b-15ff-47f2-ad87-6656caeb5398";
+
 export function InquiryForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -10,23 +13,42 @@ export function InquiryForm() {
     event.preventDefault();
     setStatus("loading");
     setMessage("");
+
     const form = event.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", "Savio Secondary School website inquiry");
+    formData.append("from_name", "Savio Secondary School Website");
 
     try {
-      const response = await fetch("/api/contact/inquiry", {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.fromEntries(data.entries())),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
+
       const result = await response.json();
-      if (!response.ok) throw new Error(result.message || "We couldn't send your inquiry.");
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Web3Forms could not send the inquiry. Please try again.",
+        );
+      }
+
       form.reset();
       setStatus("success");
       setMessage(result.message || "Your inquiry has been sent to the school.");
     } catch (error) {
+      console.error("Web3Forms inquiry error:", error);
       setStatus("error");
-      setMessage(error instanceof Error ? error.message : "We couldn't send your inquiry.");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't send your inquiry. Please try again.",
+      );
     }
   }
 
