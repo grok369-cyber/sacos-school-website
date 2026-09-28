@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
   return (
     <footer className="border-t border-[var(--brown)] bg-[var(--green-dark)] text-white">
-      <div className="container-school grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-school grid gap-10 py-14 md:grid-cols-[1.25fr_1fr_1.35fr]">
         <div>
           <div className="display text-2xl">Savio Secondary School</div>
           <p className="mt-3 max-w-md text-sm leading-6 text-white/70">Kawempe, Kampala, Uganda.</p>
@@ -27,13 +28,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[.2em] text-[#d7eadf]">Contact</p>
-          <div className="mt-4 space-y-2 text-sm text-white/70">
-            <p>Admissions and general enquiries</p>
-            <Link href="/contact" className="font-semibold text-white">Contact the school →</Link>
-          </div>
-        </div>
+        <NewsletterForm />
       </div>
 
       <div className="border-t border-white/10">
