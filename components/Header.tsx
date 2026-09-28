@@ -53,7 +53,7 @@ export function Header() {
             className="h-14 w-12 shrink-0 object-contain"
           />
           <span>
-            <strong className="display block text-base leading-none text-[var(--green-dark)] sm:text-lg">
+            <strong className="display block text-base leading-none text-[var(--brown-dark)] sm:text-lg">
               Savio Secondary School
             </strong>
             <span className="mt-1 block text-[9px] font-bold uppercase tracking-[.18em] text-[var(--brown)]">
@@ -65,7 +65,7 @@ export function Header() {
         <nav className="hidden items-center gap-5 lg:flex">
           <Link
             href="/"
-            className={isActive("/") ? "rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green-dark)]"}
+            className={isActive("/") ? "rounded-full bg-[var(--brown-soft)] px-3 py-2 text-sm font-bold text-[var(--brown-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--brown-soft)] hover:text-[var(--brown-dark)]"}
           >
             Home
           </Link>
@@ -75,13 +75,13 @@ export function Header() {
               <Link
                 key={group.label}
                 href={group.items[0][1]}
-                className={isActive(group.items[0][1]) ? "rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
+                className={isActive(group.items[0][1]) ? "rounded-full bg-[var(--brown-soft)] px-3 py-2 text-sm font-bold text-[var(--brown-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--brown-soft)] hover:text-[var(--brown)]"}
               >
                 {group.label}
               </Link>
             ) : (
               <div key={group.label} className="group relative">
-                <button className={groupIsActive(group.items) ? "inline-flex items-center gap-1 rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}>
+                <button className={groupIsActive(group.items) ? "inline-flex items-center gap-1 rounded-full bg-[var(--brown-soft)] px-3 py-2 text-sm font-bold text-[var(--brown-dark)]" : "inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--brown-soft)] hover:text-[var(--brown)]"}>
                   {group.label}
                   <ChevronDown size={15} />
                 </button>
@@ -90,7 +90,7 @@ export function Header() {
                     <Link
                       key={href}
                       href={href}
-                      className={isActive(href) ? "block rounded-lg bg-[var(--green-soft)] px-3 py-2.5 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-3 py-2.5 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
+                      className={isActive(href) ? "block rounded-lg bg-[var(--brown-soft)] px-3 py-2.5 text-sm font-bold text-[var(--brown-dark)]" : "block rounded-lg px-3 py-2.5 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--brown-soft)] hover:text-[var(--brown)]"}
                     >
                       {label}
                     </Link>
@@ -104,7 +104,7 @@ export function Header() {
             <Link
               key={href}
               href={href}
-              className={isActive(href) ? "rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
+              className={isActive(href) ? "rounded-full bg-[var(--brown-soft)] px-3 py-2 text-sm font-bold text-[var(--brown-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--brown-soft)] hover:text-[var(--brown)]"}
             >
               {label}
             </Link>
@@ -113,13 +113,13 @@ export function Header() {
 
         <Link
           href="/admissions"
-          className="hidden rounded-full bg-[var(--green)] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--green-dark)] md:inline-flex"
+          className="hidden rounded-full bg-[var(--brown)] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--brown-dark)] md:inline-flex"
         >
           Apply / Enquire
         </Link>
 
         <button
-          className="rounded-full p-2 text-[var(--green)] lg:hidden"
+          className="rounded-full p-2 text-[var(--brown)] lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen(!open)}
         >
@@ -132,7 +132,7 @@ export function Header() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className={isActive("/") ? "block rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"}
+            className={isActive("/") ? "block rounded-lg bg-[var(--brown-soft)] px-4 py-3 text-sm font-bold text-[var(--brown-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--brown-soft)]"}
           >
             Home
           </Link>
@@ -143,7 +143,7 @@ export function Header() {
                 key={group.label}
                 href={group.items[0][1]}
                 onClick={() => setOpen(false)}
-                className={isActive(group.items[0][1]) ? "block rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"}
+                className={isActive(group.items[0][1]) ? "block rounded-lg bg-[var(--brown-soft)] px-4 py-3 text-sm font-bold text-[var(--brown-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--brown-soft)]"}
               >
                 {group.label}
               </Link>
@@ -156,7 +156,7 @@ export function Header() {
                       current === group.label ? null : group.label,
                     )
                   }
-                  className={groupIsActive(group.items) ? "flex w-full items-center justify-between rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)]"}
+                  className={groupIsActive(group.items) ? "flex w-full items-center justify-between rounded-lg bg-[var(--brown-soft)] px-4 py-3 text-sm font-bold text-[var(--brown-dark)]" : "flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)]"}
                 >
                   {group.label}
                   <ChevronDown
@@ -175,7 +175,7 @@ export function Header() {
                         key={href}
                         href={href}
                         onClick={() => setOpen(false)}
-                        className={isActive(href) ? "block rounded-lg bg-[var(--green-soft)] px-4 py-2.5 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-2.5 text-sm text-[var(--muted)] hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
+                        className={isActive(href) ? "block rounded-lg bg-[var(--brown-soft)] px-4 py-2.5 text-sm font-bold text-[var(--brown-dark)]" : "block rounded-lg px-4 py-2.5 text-sm text-[var(--muted)] hover:bg-[var(--brown-soft)] hover:text-[var(--brown)]"}
                       >
                         {label}
                       </Link>
@@ -191,7 +191,7 @@ export function Header() {
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className={isActive(href) ? "block rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"}
+              className={isActive(href) ? "block rounded-lg bg-[var(--brown-soft)] px-4 py-3 text-sm font-bold text-[var(--brown-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--brown-soft)]"}
             >
               {label}
             </Link>
@@ -200,7 +200,7 @@ export function Header() {
           <Link
             href="/admissions"
             onClick={() => setOpen(false)}
-            className="mt-3 block rounded-full bg-[var(--green)] px-4 py-3 text-center text-sm font-bold text-white"
+            className="mt-3 block rounded-full bg-[var(--brown)] px-4 py-3 text-center text-sm font-bold text-white"
           >
             Apply / Enquire
           </Link>
