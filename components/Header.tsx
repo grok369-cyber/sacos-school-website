@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const groups = [
   {
@@ -35,8 +36,12 @@ const directLinks = [
 ] as const;
 
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [mobileGroup, setMobileGroup] = useState<string | null>(null);
+
+  const isActive = (href: string) => href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+  const groupIsActive = (items: readonly (readonly [string, string])[]) => items.some(([, href]) => isActive(href));
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[rgba(255,253,249,.96)] backdrop-blur-md">
@@ -60,7 +65,7 @@ export function Header() {
         <nav className="hidden items-center gap-5 lg:flex">
           <Link
             href="/"
-            className="text-sm font-semibold text-[var(--green)] transition hover:text-[var(--green-dark)]"
+            className={isActive("/") ? "rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green-dark)]"}
           >
             Home
           </Link>
@@ -70,13 +75,13 @@ export function Header() {
               <Link
                 key={group.label}
                 href={group.items[0][1]}
-                className="text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--green)]"
+                className={isActive(group.items[0][1]) ? "rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
               >
                 {group.label}
               </Link>
             ) : (
               <div key={group.label} className="group relative">
-                <button className="inline-flex items-center gap-1 py-7 text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--green)]">
+                <button className={groupIsActive(group.items) ? "inline-flex items-center gap-1 rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}>
                   {group.label}
                   <ChevronDown size={15} />
                 </button>
@@ -85,7 +90,7 @@ export function Header() {
                     <Link
                       key={href}
                       href={href}
-                      className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)] hover:text-[var(--green)]"
+                      className={isActive(href) ? "block rounded-lg bg-[var(--green-soft)] px-3 py-2.5 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-3 py-2.5 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
                     >
                       {label}
                     </Link>
@@ -99,7 +104,7 @@ export function Header() {
             <Link
               key={href}
               href={href}
-              className="text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--green)]"
+              className={isActive(href) ? "rounded-full bg-[var(--green-soft)] px-3 py-2 text-sm font-bold text-[var(--green-dark)]" : "rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
             >
               {label}
             </Link>
@@ -127,7 +132,7 @@ export function Header() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="block rounded-lg px-4 py-3 text-sm font-bold text-[var(--green)] hover:bg-[var(--green-soft)]"
+            className={isActive("/") ? "block rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"}
           >
             Home
           </Link>
@@ -138,7 +143,7 @@ export function Header() {
                 key={group.label}
                 href={group.items[0][1]}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"
+                className={isActive(group.items[0][1]) ? "block rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"}
               >
                 {group.label}
               </Link>
@@ -151,7 +156,7 @@ export function Header() {
                       current === group.label ? null : group.label,
                     )
                   }
-                  className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)]"
+                  className={groupIsActive(group.items) ? "flex w-full items-center justify-between rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)]"}
                 >
                   {group.label}
                   <ChevronDown
@@ -170,7 +175,7 @@ export function Header() {
                         key={href}
                         href={href}
                         onClick={() => setOpen(false)}
-                        className="block rounded-lg px-4 py-2.5 text-sm text-[var(--muted)] hover:bg-[var(--green-soft)] hover:text-[var(--green)]"
+                        className={isActive(href) ? "block rounded-lg bg-[var(--green-soft)] px-4 py-2.5 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-2.5 text-sm text-[var(--muted)] hover:bg-[var(--green-soft)] hover:text-[var(--green)]"}
                       >
                         {label}
                       </Link>
@@ -186,7 +191,7 @@ export function Header() {
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className="block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"
+              className={isActive(href) ? "block rounded-lg bg-[var(--green-soft)] px-4 py-3 text-sm font-bold text-[var(--green-dark)]" : "block rounded-lg px-4 py-3 text-sm font-semibold text-[var(--brown-dark)] hover:bg-[var(--green-soft)]"}
             >
               {label}
             </Link>
