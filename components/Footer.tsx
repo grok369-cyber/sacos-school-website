@@ -3,7 +3,7 @@ import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--brown)] bg-[var(--green-dark)] text-white">
+    <footer className="border-t border-[var(--brown)] bg-[var(--brown-dark)] text-white">
       <div className="container-school grid gap-10 py-14 md:grid-cols-[1.25fr_1fr_1.35fr]">
         <div>
           <div className="display text-2xl">Savio Secondary School</div>
@@ -12,7 +12,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[.2em] text-[#d7eadf]">Explore</p>
+          <p className="text-xs font-bold uppercase tracking-[.2em] text-[var(--brown-soft)]">Explore</p>
           <div className="mt-4 grid gap-2 text-sm text-white/70">
             {[
               ["About", "/about"],
