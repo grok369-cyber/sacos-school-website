@@ -32,7 +32,7 @@ export async function EventsGrid({ limit = 12 }: { limit?: number }) {
             <p className="text-xs font-bold uppercase tracking-[.15em] text-[var(--gold)]">
               {formatDate(event.date)}
             </p>
-            <h2 className="display mt-3 text-2xl text-[var(--green-dark)]">{event.title}</h2>
+            <h2 className="display mt-3 text-2xl text-[var(--brown-dark)]">{event.title}</h2>
             {event.location && <p className="mt-2 text-sm font-semibold text-[var(--brown)]">{event.location}</p>}
             {event.excerpt && <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{event.excerpt}</p>}
           </div>
