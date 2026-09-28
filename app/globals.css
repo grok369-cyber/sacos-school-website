@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --green: #0b5b3b;
-  --green-dark: #063b28;
-  --green-soft: #e7f0eb;
+  /* Savio identity: warm brown is primary, green is the supporting accent. */
   --brown: #5a3929;
   --brown-dark: #382116;
   --brown-soft: #efe5dc;
+
+  --green: #0b5b3b;
+  --green-dark: #063b28;
+  --green-soft: #e7f0eb;
+
   --cream: #f7f2e9;
   --paper: #fffdf9;
   --muted: #6f675f;
   --line: #ded4c8;
   --red: #c5222f;
-  /* Compatibility aliases used by the inner pages */
-  --navy: var(--green-dark);
-  --gold: var(--green);
-  --gold-soft: #cfe2d7;
+
+  /* Primary theme aliases used throughout the existing pages. */
+  --navy: var(--brown-dark);
+  --gold: var(--brown);
+  --gold-soft: var(--brown-soft);
 }
 
 * { box-sizing: border-box; }
@@ -26,16 +30,16 @@ body {
   background: var(--paper);
   color: var(--brown-dark);
 }
-::selection { background: #cfe2d7; color: var(--green-dark); }
+::selection { background: var(--brown-soft); color: var(--brown-dark); }
 .display { font-family: Georgia, "Times New Roman", serif; }
 .container-school { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
 
 .hero-grid {
   background:
-    radial-gradient(circle at 85% 15%, rgba(11,91,59,.13), transparent 28%),
-    radial-gradient(circle at 10% 85%, rgba(90,57,41,.10), transparent 30%),
-    linear-gradient(rgba(11,91,59,.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11,91,59,.045) 1px, transparent 1px);
+    radial-gradient(circle at 85% 15%, rgba(90,57,41,.13), transparent 28%),
+    radial-gradient(circle at 10% 85%, rgba(11,91,59,.09), transparent 30%),
+    linear-gradient(rgba(90,57,41,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,57,41,.045) 1px, transparent 1px);
   background-size: auto, auto, 48px 48px, 48px 48px;
 }
 
@@ -53,7 +57,7 @@ body {
 
 .hero-fallback {
   background:
-    radial-gradient(circle at 75% 25%, rgba(231,240,235,.25), transparent 30%),
-    radial-gradient(circle at 20% 80%, rgba(90,57,41,.35), transparent 35%),
-    linear-gradient(135deg, var(--green-dark), var(--green));
+    radial-gradient(circle at 75% 25%, rgba(239,229,220,.28), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(11,91,59,.22), transparent 35%),
+    linear-gradient(135deg, var(--brown-dark), var(--brown));
 }
