@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "School Events | Savio Secondary School, Kawempe",
+  description: "Keep up with important dates, activities and events at Savio Secondary School, Kawempe.",
+  alternates: { canonical: "/events" },
+};
+
 import { EventsGrid } from "@/components/EventsGrid";
 
 export default function EventsPage() {
