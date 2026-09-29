@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Savio Secondary School, Kawempe",
+  description: "Find the official address, phone numbers and email for Savio Secondary School, Kawempe, Kampala, Uganda.",
+  alternates: { canonical: "/contact" },
+};
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 
