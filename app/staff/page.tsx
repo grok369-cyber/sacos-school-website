@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Staff | Savio Secondary School, Kawempe",
+  description: "Meet the teachers, administrators and staff supporting learning and student life at Savio Secondary School.",
+  alternates: { canonical: "/staff" },
+};
+
 import { StaffGrid } from "@/components/StaffGrid";
 
 export default function StaffPage() {
