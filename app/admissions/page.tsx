@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admissions | Savio Secondary School, Kawempe",
+  description: "Admissions information for Savio Secondary School, Kawempe, a mixed day and boarding school offering O-Level and A-Level education.",
+  alternates: { canonical: "/admissions" },
+};
+
 import Link from "next/link";
 import { ArrowRight, Building2, FileText, MapPin, Phone } from "lucide-react";
 
