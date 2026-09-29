@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "School News & Updates | Savio Secondary School",
+  description: "Read the latest news, announcements and stories from Savio Secondary School, Kawempe.",
+  alternates: { canonical: "/news" },
+};
+
 import { NewsGrid } from "@/components/NewsGrid";
 
 export default function NewsPage() {
