@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Academics | O-Level & A-Level | Savio Secondary School",
+  description: "Explore O-Level, A-Level, ICT and UNEB academic information for Savio Secondary School, Kawempe, including documented UCE and UACE results.",
+  alternates: { canonical: "/academics" },
+};
+
 import Link from "next/link";
 import { Award, Laptop, School } from "lucide-react";
 import { client, sanityConfigured } from "@/lib/sanity";
