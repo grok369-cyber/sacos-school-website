@@ -1,2 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "School Gallery | Savio Secondary School, Kawempe",
+  description: "View photos and moments from learning, activities, events and campus life at Savio Secondary School, Kawempe.",
+  alternates: { canonical: "/gallery" },
+};
+
 import { GalleryPreview } from "@/components/GalleryPreview";
 export default function GalleryPage(){return <main><section className="hero-grid border-b border-[var(--line)]"><div className="container-school py-20"><span className="text-xs font-bold uppercase tracking-[.2em] text-[var(--gold)]">Campus life</span><h1 className="display mt-4 text-5xl text-[var(--navy)] sm:text-7xl">Gallery.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">A visual record of learning, activities, events and life at Savio.</p></div></section><section className="container-school py-20"><GalleryPreview/></section></main>}
