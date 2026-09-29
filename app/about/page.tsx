@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Savio Secondary School, Kawempe",
+  description: "Learn about Savio Secondary School, Kawempe — a mixed day and boarding school offering O-Level and A-Level education in Uganda.",
+  alternates: { canonical: "/about" },
+};
+
 import { Award, Building2, Quote, ShieldCheck } from "lucide-react";
 
 export default function AboutPage() {
