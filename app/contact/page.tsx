@@ -60,7 +60,7 @@ export default function ContactPage() {
           <div className="mt-8 space-y-4 text-sm">
             <Row label="Ministry registration" value="PSS/S/649" />
             <Row label="UNEB Centre" value="U3762" />
-            <Row label="Selection code" value="3687" />
+            <Row label="Selection code" value="3688" />
             <Row label="School type" value="Mixed Day & Boarding" />
           </div>
 
