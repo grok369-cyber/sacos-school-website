@@ -42,11 +42,15 @@ export default async function AcademicsPage() {
     ? settings.academicLevels.map((item: any) => [item.title, item.label, item.description])
     : fallbackLevels;
 
-  const uace = settings?.uaceResults?.length
+  // When a Sanity results array exists, it is authoritative — including an
+  // intentionally empty array. This lets the editor remove all performers.
+  // The hardcoded data is only a compatibility fallback for older settings
+  // documents that do not yet have these fields populated.
+  const uace = Array.isArray(settings?.uaceResults)
     ? settings.uaceResults.map((item: any) => [item.name, item.combination, item.points])
     : fallbackUace;
 
-  const uce = settings?.uceResults?.length
+  const uce = Array.isArray(settings?.uceResults)
     ? settings.uceResults.map((item: any) => [item.name, item.aggregates])
     : fallbackUce;
 
