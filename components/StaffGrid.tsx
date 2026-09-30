@@ -1,9 +1,11 @@
-import Image from "next/image";
 import { client, sanityConfigured, urlFor } from "@/lib/sanity";
 import { staffQuery } from "@/lib/queries";
+import { StaffCard } from "@/components/StaffCard";
 
 export async function StaffGrid({ limit = 24 }: { limit?: number }) {
-  const staff = sanityConfigured ? await client.fetch<any[]>(staffQuery).catch(() => []) : [];
+  const staff = sanityConfigured
+    ? await client.fetch<any[]>(staffQuery).catch(() => [])
+    : [];
 
   if (!staff.length) {
     return (
@@ -14,35 +16,20 @@ export async function StaffGrid({ limit = 24 }: { limit?: number }) {
   }
 
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="space-y-6">
       {staff.slice(0, limit).map((member) => (
-        <article key={member._id} className="paper-card overflow-hidden rounded-2xl">
-          <div className="relative aspect-[4/5] bg-[var(--cream)]">
-            {member.photo ? (
-              <Image
-                src={urlFor(member.photo).width(700).height(875).fit("crop").url()}
-                alt={member.name}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 33vw, 25vw"
-                className="object-cover"
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-[var(--muted)]">
-                No photo available
-              </div>
-            )}
-          </div>
-          <div className="p-6">
-            <h2 className="display text-2xl text-[var(--brown-dark)]">{member.name}</h2>
-            <p className="mt-2 text-sm font-bold text-[var(--brown)]">{member.position}</p>
-            {member.department && (
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[.12em] text-[var(--muted)]">
-                {member.department}
-              </p>
-            )}
-            {member.bio && <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{member.bio}</p>}
-          </div>
-        </article>
+        <StaffCard
+          key={member._id}
+          name={member.name}
+          position={member.position}
+          department={member.department}
+          bio={member.bio}
+          imageUrl={
+            member.photo
+              ? urlFor(member.photo).width(640).height(640).fit("crop").url()
+              : undefined
+          }
+        />
       ))}
     </div>
   );
