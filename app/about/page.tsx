@@ -42,7 +42,7 @@ export default async function AboutPage() {
         <Info title="School type">Mixed Day & Boarding</Info>
         <Info title="Levels">O-Level & A-Level</Info>
         <Info title="UNEB Centre">U3762</Info>
-        <Info title="Selection code">3687</Info>
+        <Info title="Selection code">3688</Info>
       </section>
 
       <section className="bg-[var(--cream)] py-20">
