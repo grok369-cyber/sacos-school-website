@@ -10,8 +10,15 @@ export async function GalleryPreview() {
 
   if (!items.length) {
     return (
-      <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--cream)] p-8 text-sm text-[var(--muted)]">
-        Gallery images will appear here once they are added in Sanity.
+      <div className="rounded-2xl border border-[var(--line)] bg-[var(--cream)] p-8 sm:p-10">
+        <span className="text-xs font-bold uppercase tracking-[.18em] text-[var(--green)]">Life at Savio</span>
+        <h3 className="display mt-3 text-2xl text-[var(--brown-dark)]">A closer look at our school community.</h3>
+        <p className="mt-3 max-w-2xl leading-7 text-[var(--muted)]">
+          School life is made up of learning, teamwork, discovery and shared experiences. This gallery will bring
+          together moments from across the Savio community, giving visitors a glimpse of the people and activities
+          that shape the school.
+        </p>
+        <p className="mt-3 text-sm font-medium text-[var(--brown)]">Photos and gallery highlights will be added here as they are shared.</p>
       </div>
     );
   }
@@ -52,13 +59,9 @@ export async function GalleryPreview() {
             )}
 
             <div className="absolute inset-x-0 bottom-0 z-10 p-5 text-white sm:p-6">
-              <h3 className="text-2xl font-bold leading-tight drop-shadow-sm">
-                {item.title}
-              </h3>
+              <h3 className="text-2xl font-bold leading-tight drop-shadow-sm">{item.title}</h3>
               {item.caption && (
-                <p className="mt-2 max-w-xl text-sm leading-6 text-white/95 sm:text-[15px]">
-                  {item.caption}
-                </p>
+                <p className="mt-2 max-w-xl text-sm leading-6 text-white/95 sm:text-[15px]">{item.caption}</p>
               )}
               <span className="mt-3 inline-flex translate-y-1 text-xs font-bold uppercase tracking-[0.16em] text-white/0 transition-all duration-300 group-hover:translate-y-0 group-hover:text-white/85">
                 View image →
