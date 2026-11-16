@@ -7,8 +7,15 @@ export async function EventsGrid({ limit = 12 }: { limit?: number }) {
 
   if (!events.length) {
     return (
-      <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--cream)] p-8 text-sm text-[var(--muted)]">
-        School events will appear here once they are added and published in Sanity.
+      <div className="rounded-2xl border border-[var(--line)] bg-[var(--cream)] p-8 sm:p-10">
+        <span className="text-xs font-bold uppercase tracking-[.18em] text-[var(--green)]">School calendar</span>
+        <h3 className="display mt-3 text-2xl text-[var(--brown-dark)]">Stay connected with what’s ahead.</h3>
+        <p className="mt-3 max-w-2xl leading-7 text-[var(--muted)]">
+          Throughout the school year, activities may bring learners together through academics, sport, creativity,
+          leadership and community participation. Confirmed dates and event details will be listed here when they are
+          shared by the school.
+        </p>
+        <p className="mt-3 text-sm font-medium text-[var(--brown)]">Check back for calendar updates and announcements.</p>
       </div>
     );
   }
@@ -29,9 +36,7 @@ export async function EventsGrid({ limit = 12 }: { limit?: number }) {
             )}
           </div>
           <div className="p-6">
-            <p className="text-xs font-bold uppercase tracking-[.15em] text-[var(--gold)]">
-              {formatDate(event.date)}
-            </p>
+            <p className="text-xs font-bold uppercase tracking-[.15em] text-[var(--gold)]">{formatDate(event.date)}</p>
             <h2 className="display mt-3 text-2xl text-[var(--brown-dark)]">{event.title}</h2>
             {event.location && <p className="mt-2 text-sm font-semibold text-[var(--brown)]">{event.location}</p>}
             {event.excerpt && <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{event.excerpt}</p>}
